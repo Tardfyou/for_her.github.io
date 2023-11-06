@@ -19,7 +19,7 @@ html,body{
 </head>
 
 <body>
-
+	<audio src="music/Dao.mp3" autoplay="true" loop="true">
 <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:7777"></canvas>
 <canvas style="position:absolute;width:100%;height:100%;z-index:8888" class="canvas" ></canvas>
 <div class="overlay">
@@ -552,20 +552,6 @@ window.addEventListener("resize",()=>{
 initVars();
 frame();
 </script>
-<script type="text/javascript">
-    window.onload = function(){
-             setInterval("toggleSound()",100);
-        }
 
-    function toggleSound() {
-                var music = document.getElementById("vd");//获取ID  
-                    
-                if (music.paused) { //判读是否播放  
-                    music.paused=false;
-                    music.play(); //没有就播放 
-                }    
-        }
-</script>
-<audio src="music/Dao.mp3" autoplay="true" loop="true">
 </body>
 </html>
