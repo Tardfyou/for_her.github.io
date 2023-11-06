@@ -19,7 +19,7 @@ html,body{
 </head>
 
 <body>
-	<audio src="music/Dao.mp3" autoplay="true" loop="true">
+	<audio src="music/Dao.mp3" autoplay="true" loop="true"></audio>
 <canvas id="canvas" style="position:absolute;width:100%;height:100%;z-index:7777"></canvas>
 <canvas style="position:absolute;width:100%;height:100%;z-index:8888" class="canvas" ></canvas>
 <div class="overlay">
@@ -259,7 +259,16 @@ html,body{
     <img class="imgview" />
     <p></p>
 </div>
-
+<script>
+    var promise = document.querySelector('video').play();
+    if (promise !== undefined) {
+        promise.then(_ => {
+            // Autoplay started! 这种情况可以自动播放（非谷歌的其他浏览器：edge、360）
+        }).catch(error => {
+            //  Autoplay was prevented.谷歌和火狐就会阻止播放，可以显示一个PLAY按钮提示用户点击后进行播放
+        });
+    }
+</script>
 <script src="js/index.js"></script>
 <script src='js/jquery.js'></script>
 <script src='js/happy.js'></script>
